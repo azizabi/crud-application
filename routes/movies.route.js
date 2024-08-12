@@ -1,28 +1,20 @@
 const express =require('express')
 const router=express.Router()
-
+const movieIndex = require('../controllers/movie.controler')
+const moviepost =require('../controllers/movie.controler')
+const movieupdate =require('../controllers/movie.controler')
+const moviedelete =require('../controllers/movie.controler')
 // CRUD functions
 // r -
-router.get('/',(req,res)=>{
-    res.send("get all res")
-})
+router.get('/' ,movieIndex)
 
 //c -
-router.post('/',(req,res)=>{
-    res.send("get all res for post")
-
-})
+router.post('/',moviepost)
 
 // u
-router.put('/:id',(req,res)=>{
-    res.send("get all res for updatae")
-
-})
+router.put('/:id',movieupdate)
 
 //d
-router.delete('/:id',(req,res)=>{
-    res.send("get all res for del")
-
-})
+router.delete('/:id',moviedelete)
 
 module.exports = router;
