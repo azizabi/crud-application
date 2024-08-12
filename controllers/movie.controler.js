@@ -55,5 +55,15 @@ export const movieUpdate = async (req, res) => {
 };
 
 export const movieDelete = async (req, res) => {
-
+    try {
+        const result=await Movie.findByIdAndDelete(req.params.id)
+        if(result==null){
+            res.status(404).json({message:"null vaule"})
+        }
+        else{
+            res.status(200).json(result)
+        }
+    } catch (e) {
+        res.status(500).json({ message: e.message });
+    }
 };
