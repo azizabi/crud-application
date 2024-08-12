@@ -1,18 +1,17 @@
-const movieIndex =(req,res)=>{
-    res.send("get all res")
-}
+export const movieIndex = (req, res) => {
+    res.send("get all res");
+};
 
-module.exports =movieIndex
+export const moviePost = (req, res) => {
+    res.send("get all res for post");
+};
 
-const moviepost =(req,res)=>{
-    res.send("get all res for post")}
-module.exports =moviepost
+export const movieUpdate = (req, res) => {
+    res.send("get all res for update");
+};
 
-const movieupdate =(req,res)=>{
-    res.send("get all res for updatae")
-}
-module.exports =movieupdate;
-const moviedelete =(req,res)=>{
-    res.send("get all res for updatae")
-}
-module.exports =moviedelete;
+export const movieDelete = (req, res) => {
+    res.send("get all res for delete");
+};
+
+

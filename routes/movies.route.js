@@ -1,20 +1,24 @@
-const express =require('express')
-const router=express.Router()
-const movieIndex = require('../controllers/movie.controler')
-const moviepost =require('../controllers/movie.controler')
-const movieupdate =require('../controllers/movie.controler')
-const moviedelete =require('../controllers/movie.controler')
+import express from 'express';
+import {
+    movieIndex,
+    moviePost,
+    movieUpdate,
+    movieDelete 
+} from '../controllers/movie.controler.js';
+
+const router = express.Router();
+
 // CRUD functions
-// r -
-router.get('/' ,movieIndex)
+// Read (R)
+router.get('/', movieIndex);
 
-//c -
-router.post('/',moviepost)
+// Create (C)
+router.post('/', moviePost);
 
-// u
-router.put('/:id',movieupdate)
+// Update (U)
+router.put('/:id', movieUpdate);
 
-//d
-router.delete('/:id',moviedelete)
+// Delete (D)
+router.delete('/:id', movieDelete);
 
-module.exports = router;
+export default router;
